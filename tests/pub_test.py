@@ -14,3 +14,4 @@ class TestPub(unittest.TestCase):
     def test_pub_drinks_empty(self):
         self.assertEqual(0,len(self.pub.drinks))
     
+    
