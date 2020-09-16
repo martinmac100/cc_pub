@@ -46,3 +46,7 @@ class TestPub(unittest.TestCase):
     def test_age_check(self):
         test_customer = Customer("Young Bob", 1.50, 13, 0.00)
         self.assertEqual("Beat it scamp!", self.pub.sell_drink(self.beer, test_customer))
+
+    def test_refuse_drunk(self):
+        test_customer = Customer("Really Drunken Bob", 50.00, 23, 25.00)
+        self.assertEqual("Beat it drunken scamp!", self.pub.sell_drink(self.cocktail, test_customer))

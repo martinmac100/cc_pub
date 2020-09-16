@@ -19,3 +19,8 @@ class TestCustomer(unittest.TestCase):
 
     def test_customer_has_age(self):
         self.assertEqual(53, self.customer.age)
+
+    def test_increase_drunkeness(self):
+        test_drink = Drink("Depth Charge", 8.50, 3.00)
+        self.customer.increase_drunkeness(test_drink.alcohol_units)
+        self.assertEqual(23.00, self.customer.drunkeness)
