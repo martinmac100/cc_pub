@@ -5,13 +5,13 @@ from src.customer import Customer
 
 class TestPub(unittest.TestCase):
     def setUp(self):
-        self.pub = Pub("Ox", 100.00)
-        self.beer = Drink("Tennents", 4.00)
-        self.cocktail = Drink("Depth Charge",8.50)
+        self.pub = Pub("The Monkey Puzzle", 100.00)
+        self.beer = Drink("Tennents", 4.00, 2.00)
+        self.cocktail = Drink("Depth Charge",8.50, 3.00)
         self.pub.drinks = [self.beer, self.cocktail]
 
     def test_pub_has_name(self):
-        self.assertEqual("Ox", self.pub.name)
+        self.assertEqual("The Monkey Puzzle", self.pub.name)
 
     def test_pub_has_till(self):
         self.assertEqual(100.00, self.pub.till)
@@ -25,7 +25,7 @@ class TestPub(unittest.TestCase):
         self.assertEqual(104.00, self.pub.till)
 
     def test_sell_drink(self):
-        test_customer = Customer("Drunken Bob", 200, 53)
+        test_customer = Customer("Drunken Bob", 200, 53, 20.00)
         test_drink = self.beer
         self.pub.sell_drink(self.beer, test_customer)
         self.assertEqual(104.00, self.pub.till)
@@ -44,5 +44,5 @@ class TestPub(unittest.TestCase):
         self.assertEqual(2, self.pub.stock_count())
 
     def test_age_check(self):
-        test_customer = Customer("Young Bob", 1.50, 13)
+        test_customer = Customer("Young Bob", 1.50, 13, 0.00)
         self.assertEqual("Beat it scamp!", self.pub.sell_drink(self.beer, test_customer))
