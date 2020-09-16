@@ -33,3 +33,9 @@ class TestPub(unittest.TestCase):
     def test_add_drink(self):
         self.pub.add_drink(self.beer)
         self.assertEqual(3, len(self.pub.drinks))
+
+    def test_remove_drink(self):
+        self.pub.remove_drink(self.beer)
+        self.assertEqual(1, len(self.pub.drinks))
+
+    

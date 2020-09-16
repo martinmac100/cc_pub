@@ -14,4 +14,5 @@ class Pub:
     def add_drink(self, drink):
         self.drinks.append(drink)
 
-    
+    def remove_drink(self, drink):
+        self.drinks.remove(drink)
