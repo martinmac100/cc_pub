@@ -25,11 +25,11 @@ class TestPub(unittest.TestCase):
         self.assertEqual(104.00, self.pub.till)
 
     def test_sell_drink(self):
-        test_customer = Customer("Drunken Bob", 200)
-        self.pub.sell_drink(self.beer.price, test_customer)
+        test_customer = Customer("Drunken Bob", 200, 53)
+        test_drink = self.beer
+        self.pub.sell_drink(self.beer, test_customer)
         self.assertEqual(104.00, self.pub.till)
         self.assertEqual(196, test_customer.wallet)
-        self.pub.remove_drink(self.beer)
         self.assertEqual(1, self.pub.stock_count())
 
     def test_add_drink(self):
@@ -43,4 +43,6 @@ class TestPub(unittest.TestCase):
     def test_stock_count(self):
         self.assertEqual(2, self.pub.stock_count())
 
-    
+    def test_age_check(self):
+        test_customer = Customer("Young Bob", 1.50, 13)
+        self.assertEqual("Beat it scamp!", self.pub.sell_drink(self.beer, test_customer))
