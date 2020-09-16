@@ -10,3 +10,8 @@ class Pub:
     def sell_drink(self, drink_price, customer):
         self.add_money_to_till(drink_price)
         customer.remove_money_from_customer_wallet(drink_price)
+
+    def add_drink(self, drink):
+        self.drinks.append(drink)
+
+    
