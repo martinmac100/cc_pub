@@ -9,9 +9,12 @@ class Pub:
 
     def sell_drink(self, drink, customer):
         if customer.age > 18:
-            self.add_money_to_till(drink.price)
-            customer.remove_money_from_customer_wallet(drink.price)
-            self.remove_drink(drink)
+            if customer.drunkeness < 25.00:
+                self.add_money_to_till(drink.price)
+                customer.remove_money_from_customer_wallet(drink.price)
+                self.remove_drink(drink)
+            else:
+                return "Beat it drunken scamp!"
         else:
             return "Beat it scamp!"
 
