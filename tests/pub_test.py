@@ -38,4 +38,7 @@ class TestPub(unittest.TestCase):
         self.pub.remove_drink(self.beer)
         self.assertEqual(1, len(self.pub.drinks))
 
+    def test_stock_count(self):
+        self.assertEqual(2, self.pub.stock_count())
+
     

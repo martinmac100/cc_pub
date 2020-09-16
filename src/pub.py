@@ -16,3 +16,6 @@ class Pub:
 
     def remove_drink(self, drink):
         self.drinks.remove(drink)
+
+    def stock_count(self):
+        return len(self.drinks)
